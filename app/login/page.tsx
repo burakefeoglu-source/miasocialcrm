@@ -26,7 +26,7 @@ function LoginForm() {
     });
     setLoading(false);
     if (error) {
-      setError(error.status === 429 ? "Çok fazla deneme yapıldı. Biraz bekleyip tekrar dene." : "Bağlantı gönderilemedi. Tekrar dene.");
+      setError(error.status === 429 ? "Çok fazla deneme yapıldı. Biraz bekleyip tekrar dene." : `Bağlantı gönderilemedi: ${error.message}`);
       return;
     }
     setSent(true);
